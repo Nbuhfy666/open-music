@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пульт управления Python Плеером</title>
+    <!-- Подключаем внешние стили из папки html -->
+    <link rel="stylesheet" href="/html/style.css">
+</head>
+<body>
+
+<div class="player">
+    <h3>open-music</h3>
+    <div class="title" id="track-name">Связь с сервером...</div>
+    
+    <div class="controls">
+        <button onclick="sendAction('prev')">⏮</button>
+        <button id="play-btn" onclick="togglePlay()">▶ Старт</button>
+        <button onclick="sendAction('next')">⏭</button>
+    </div>
+
+    <div class="vol-container">
+        <label>Громкость ПК: </label>
+        <input type="range" min="0" max="1" step="0.05" value="0.5" oninput="changeVolume(this.value)">
+    </div>
+
+    <div class="playlist" id="list"></div>
+</div>
+
+<!-- Подключаем внешний JS скрипт из папки html -->
+<script src="/html/script.js"></script>
+</body>
+</html>
